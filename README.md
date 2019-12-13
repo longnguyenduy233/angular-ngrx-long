@@ -2,30 +2,20 @@
 
 This extension allows **quickly scaffolding ngRx file templates** (actions, reducers, effects and more) in VS Code Angular project based on @ngrx/platform
 
-## Features
+### Generate store directory + files 
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Right click on `root-store` folder in your current project to generate the `feature-store.module`. You will be prompted to enter the feature name.
+This command will generate the following files:
 
-For example if there is an image subfolder under your extension project workspace:
+* `feature-store.module.ts`
+* `feature.actions.ts`
+* `feature.effects.ts`
+* `feature.reducer.ts`
+* `feature.state.ts`
+* `feature.selectors.ts`
+* `index.ts`
+This extension creates a `feature-store.module` with actions, reducer file, feature-state, effects, selectors and **import a new store module into root-store module**. The module contains the required setup for ngrx for a feature-module (lazy loaded).
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
 
 ## Known Issues
 
