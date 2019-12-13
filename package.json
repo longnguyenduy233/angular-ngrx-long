@@ -9,6 +9,10 @@
 	"engines": {
 		"vscode": "^1.40.0"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lovemoon23/angular-ngrx-long"
+	},
 	"categories": [
 		"Other"
 	],
