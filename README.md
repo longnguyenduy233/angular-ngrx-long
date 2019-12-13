@@ -14,6 +14,7 @@ This command will generate the following files:
 * `feature.state.ts`
 * `feature.selectors.ts`
 * `index.ts`
+
 This extension creates a `feature-store.module` with actions, reducer file, feature-state, effects, selectors and **import a new store module into root-store module**. The module contains the required setup for ngrx for a feature-module (lazy loaded).
 
 
