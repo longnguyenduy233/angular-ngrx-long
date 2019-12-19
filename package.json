@@ -1,6 +1,6 @@
 {
 	"name": "angular-ngrx-long",
-	"displayName": "Angular Ngrx Long Nguyen",
+	"displayName": "Angular generate ngrx feature store",
 	"description": "Quickly scaffold ngrx file templates Long Nguyen Duy",
 	"version": "0.0.2",
 	"publisher": "LongNguyenDuy",
@@ -13,6 +13,15 @@
 		"type": "git",
 		"url": "https://github.com/lovemoon23/angular-ngrx-long"
 	},
+	"keywords": [
+		"Angular",
+		"Angular 2",
+		"Angular 4",
+		"ngrx",
+		"redux",
+		"TypeScript",
+		"Templates"
+	],
 	"categories": [
 		"Other"
 	],
