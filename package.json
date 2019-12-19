@@ -2,7 +2,7 @@
 	"name": "angular-ngrx-long",
 	"displayName": "Angular Generate Ngrx Store",
 	"description": "Quickly scaffold ngrx file templates Long Nguyen Duy",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "LongNguyenDuy",
 	"license": "MIT",
 	"icon": "images/angular-ngrx-logo.png",
