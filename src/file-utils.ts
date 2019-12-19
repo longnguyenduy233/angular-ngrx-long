@@ -38,16 +38,26 @@ export function writeFiles(loc: IPath) {
     wsedit.insert(filePath, new vscode.Position(0, 0), feature_index_ts(featureNameClassName, featureNameVarName));
     vscode.workspace.applyEdit(wsedit).then( rs => {
         updateRootStoreModule(featureNameClassName, loc);
+        vscode.window.showInformationMessage(`Created a new store: ${loc.fileName}`);
     });
 }
 
 export function updateRootStoreModule(featureNameClassName: string, loc: IPath) {
     vscode.workspace.findFiles('**/root-store.module.ts', '**/node_modules/**', 10).then(rs => {
+        if (rs.length === 0) {
+            return;
+        }
         vscode.workspace.openTextDocument(rs[0]).then((a: vscode.TextDocument) => {
             vscode.window.showTextDocument(a).then(e => {
                 const moduleContent = e.document.getText(new vscode.Range(new vscode.Position(0, 0), e.document.positionAt(e.document.getText().length)));
                 const importIndex = moduleContent.search(/@NgModule/);
                 const moduleImportMatch: any = moduleContent.match(/imports:*\s\[/);
+                if (importIndex === -1) {
+                    return;
+                }
+                if (moduleImportMatch === null) {
+                    return;
+                }
                 let moduleImportIndex = 0;
                 if (moduleImportMatch) {
                     moduleImportIndex = moduleImportMatch.index + moduleImportMatch[0].length;
@@ -55,9 +65,7 @@ export function updateRootStoreModule(featureNameClassName: string, loc: IPath) 
                 e.edit(edit => {
                     edit.insert(e.document.positionAt(importIndex - 1), `import { ${featureNameClassName}StoreModule } from './${loc.dirName}';\n`);
                     edit.insert(e.document.positionAt(moduleImportIndex), `\n\t\t${featureNameClassName}StoreModule,`);
-                }).then( rs => {
-                    vscode.window.showInformationMessage(`Created a new store: ${loc.fileName}`);
-                });
+                }).then( rs => {});
                 // vscode.window.showInformationMessage(e.document.getText(new vscode.Range(new vscode.Position(0, 0), e.document.positionAt(e.document.getText().length))));
             });
         });
