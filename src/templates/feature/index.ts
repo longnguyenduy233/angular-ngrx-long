@@ -1,6 +1,6 @@
 export function feature_index_ts(
     featureNameClassName: string,
-    featureNameVarName: string
+    dirName: string
   ): string {
     return `
 import * as ${featureNameClassName}StoreState from './state';
@@ -10,7 +10,7 @@ import * as ${featureNameClassName}StoreSelectors from './selectors';
 import * as ${featureNameClassName}StoreReducer from './reducer';
 export {
     ${featureNameClassName}StoreModule
-} from './${featureNameVarName}-store.module';
+} from './${dirName}.module';
 
 export {
     ${featureNameClassName}StoreState,

@@ -35,7 +35,7 @@ export function writeFiles(loc: IPath) {
     wsedit.insert(filePath, new vscode.Position(0, 0), feature_store_module_ts(featureNameClassName, featureNameVarName));
     filePath = vscode.Uri.file(getFileName(loc, `index.ts`));
     wsedit.createFile(filePath, { ignoreIfExists: true });
-    wsedit.insert(filePath, new vscode.Position(0, 0), feature_index_ts(featureNameClassName, featureNameVarName));
+    wsedit.insert(filePath, new vscode.Position(0, 0), feature_index_ts(featureNameClassName, loc.dirName));
     vscode.workspace.applyEdit(wsedit).then( rs => {
         updateRootStoreModule(featureNameClassName, loc);
         vscode.window.showInformationMessage(`Created a new store: ${loc.fileName}`);
