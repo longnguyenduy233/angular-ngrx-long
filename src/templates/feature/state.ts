@@ -7,7 +7,7 @@ import { ${featureNameClassName} } from 'src/app/models';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 export const ${featureNameVarName}Adapter: EntityAdapter<${featureNameClassName}> = createEntityAdapter<${featureNameClassName}>({
-  selectId: model => model.${featureNameVarName}Id.toString()
+  selectId: model => model.id.toString()
 });
 export interface State extends EntityState<${featureNameClassName}> {
   isLoading?: boolean;

@@ -30,7 +30,7 @@ export const selectCurrent${featureNameClassName} = createSelector(
     selectSelected${featureNameClassName}Id,
     (all${featureNameClassName}s: ${featureNameClassName}[], selected${featureNameClassName}Id: string | number ) => {
         if (all${featureNameClassName}s && selected${featureNameClassName}Id) {
-            return all${featureNameClassName}s.find(p => p.${featureNameVarName}Id === selected${featureNameClassName}Id);
+            return all${featureNameClassName}s.find(p => p.id === selected${featureNameClassName}Id);
         } else {
             return null;
         }
